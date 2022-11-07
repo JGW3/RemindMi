@@ -10,7 +10,12 @@ abstract class Routes {
   static const SIGNUP = _Paths.SIGNUP;
   static const CHILDRENHOME = _Paths.CHILDRENHOME;
   static const PARENTHOME = _Paths.PARENTHOME;
-
+  static const LANDINGPAGE = _Paths.LANDINGPAGE;
+  static const FORGOTPASSWORD = _Paths.FORGOTPASSWORD;
+  static const BOTTOMNAVIGATIION = _Paths.BOTTOMNAVIGATIION;
+  static const ADDTASK = _Paths.ADDTASK;
+  static const MANAGE = _Paths.MANAGE;
+  static const ADDDEPENDENT = _Paths.ADDDEPENDENT;
 }
 
 abstract class _Paths {
@@ -22,4 +27,10 @@ abstract class _Paths {
   static const SIGNUP = '/signup';
   static const CHILDRENHOME = '/parent-home';
   static const PARENTHOME = '/children-home';
+  static const LANDINGPAGE = '/landing-page';
+  static const FORGOTPASSWORD = '/forgot-password';
+  static const BOTTOMNAVIGATIION = '/bottom-navigation';
+  static const ADDTASK = '/add-task';
+  static const MANAGE = '/manage';
+  static const ADDDEPENDENT = '/add-dependent';
 }

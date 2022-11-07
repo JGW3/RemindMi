@@ -5,7 +5,7 @@ import 'package:remindmi/accessibility.dart';
 import 'package:remindmi/app/modules/parenthome/parent_home_view.dart';
 import 'package:remindmi/app/routes/app_pages.dart';
 import 'package:remindmi/credits.dart';
-import 'package:remindmi/dashboard.dart';
+
 import 'package:remindmi/my_drawer_header.dart';
 import 'package:remindmi/privacy_policy.dart';
 import 'package:remindmi/settings.dart';
@@ -59,7 +59,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var container;
     if (currentPage == DrawerSections.dashboard) {
-      container = DashboardPage();
     } else if (currentPage == DrawerSections.accessibility) {
       container = AccessibilityPage();
     } else if (currentPage == DrawerSections.settings) {
@@ -69,7 +68,7 @@ class _HomePageState extends State<HomePage> {
     } else if (currentPage == DrawerSections.privacy_policy) {
       container = PrivacyPolicyPage();
     } else if (currentPage == DrawerSections.parent_page) {
-      container = ParentHomeView ();
+      container = ParentHomeView();
     }
 
     final getStorge = GetStorage();
@@ -108,7 +107,7 @@ class _HomePageState extends State<HomePage> {
         // shows the list of menu drawer
         children: [
           if (role == 'parent') ...[
-            menuItem(6, "Add Children", Icons.dashboard_outlined,
+            menuItem(6, "Add Dependent", Icons.dashboard_outlined,
                 currentPage == DrawerSections.dashboard ? true : false),
           ],
           menuItem(1, "Tasks", Icons.dashboard_outlined,
@@ -122,7 +121,7 @@ class _HomePageState extends State<HomePage> {
               currentPage == DrawerSections.credits ? true : false),
           menuItem(5, "Privacy policy", Icons.privacy_tip_outlined,
               currentPage == DrawerSections.privacy_policy ? true : false),
-          menuItem(7, "Log Out", Icons.privacy_tip_outlined,false ),
+          menuItem(7, "Log Out", Icons.privacy_tip_outlined, false),
         ],
       ),
     );
@@ -134,7 +133,7 @@ class _HomePageState extends State<HomePage> {
       color: selected ? Colors.grey[300] : Colors.transparent,
       child: InkWell(
         onTap: () {
-          if(id==7){
+          if (id == 7) {
             getStorge.erase();
             Get.offAllNamed(Routes.LOGIN);
           }

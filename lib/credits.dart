@@ -8,11 +8,12 @@ class CreditsPage extends StatefulWidget {
 class _CreditsPageState extends State<CreditsPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: EdgeInsets.all(24.0),
-        child: Text("Created by Nikhil Adhikari, Daniel Derheim, Bishnu Sharma, and John West",
-          textAlign: TextAlign.center,),
+    return Scaffold(
+      body: Center(
+        child: Text(
+          "Created by Nikhil Adhikari, Daniel Derheim, Bishnu Sharma, and John West",
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }

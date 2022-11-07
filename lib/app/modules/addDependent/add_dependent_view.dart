@@ -1,31 +1,29 @@
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:remindmi/app/components/child_list_card.dart';
+import 'package:remindmi/app/components/no_checkbox_child_list.dart';
+import 'package:remindmi/app/modules/addDependent/add_depedent_controller.dart';
+import 'package:remindmi/app/modules/addtask/add_task_controller.dart';
 import 'package:remindmi/app/modules/signup/signup_controller.dart';
 import 'package:remindmi/app/routes/app_pages.dart';
 
-class SignupView extends StatefulWidget {
-  const SignupView({super.key});
-
-  @override
-  State<SignupView> createState() => _SignupViewState();
-}
-
-class _SignupViewState extends State<SignupView> {
-  SignupController MySignupController = Get.put(SignupController());
-
+class AddDependentView extends StatelessWidget {
+  AddDependentView({super.key});
+  AddDependentController MyAddDependentController =
+      Get.put(AddDependentController());
+  AddTaskController addTaskController = Get.put(AddTaskController());
   @override
   Widget build(BuildContext context) {
-    bool terms = false;
     TextEditingController _emailController = TextEditingController();
     TextEditingController _passwordController = TextEditingController();
     TextEditingController _confirmPasswordController = TextEditingController();
     TextEditingController _fullNameController = TextEditingController();
-    TextEditingController _nameController = TextEditingController();
-
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(
@@ -48,16 +46,7 @@ class _SignupViewState extends State<SignupView> {
             alignment: Alignment.centerLeft,
             margin: EdgeInsets.fromLTRB(16, 0, 0, 0),
             child: Text(
-              'Create',
-              style: GoogleFonts.dmSans(
-                  fontSize: 36.0, fontWeight: FontWeight.w700),
-            ),
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            margin: EdgeInsets.fromLTRB(16, 0, 0, 0),
-            child: Text(
-              'your account',
+              'Add Dependent',
               style: GoogleFonts.dmSans(
                   fontSize: 36.0, fontWeight: FontWeight.w700),
             ),
@@ -126,7 +115,8 @@ class _SignupViewState extends State<SignupView> {
                     fontSize: 20, fontWeight: FontWeight.w500),
                 // keyboardType: TextInputType.emailAddress,
                 controller: _passwordController,
-                obscureText: (MySignupController.passwordVisibility.value),
+                obscureText:
+                    (MyAddDependentController.passwordVisibility.value),
                 // onChanged: ((value) {
                 //   MySignupController.can ();
                 // }),
@@ -135,12 +125,13 @@ class _SignupViewState extends State<SignupView> {
                   hintText: "Password",
                   prefixIcon: Icon(Icons.key_outlined),
                   suffixIcon: InkWell(
-                    child: Icon(MySignupController.passwordVisibility.value
-                        ? Icons.visibility_outlined
-                        : Icons.visibility_off_outlined),
+                    child: Icon(
+                        MyAddDependentController.passwordVisibility.value
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined),
                     onTap: () {
-                      MySignupController.passwordVisibility.value =
-                          !MySignupController.passwordVisibility.value;
+                      MyAddDependentController.passwordVisibility.value =
+                          !MyAddDependentController.passwordVisibility.value;
                     },
                   ),
                 ),
@@ -163,7 +154,8 @@ class _SignupViewState extends State<SignupView> {
                     fontSize: 20, fontWeight: FontWeight.w500),
                 // keyboardType: TextInputType.emailAddress,
                 controller: _confirmPasswordController,
-                obscureText: (MySignupController.cPasswordVisibility.value),
+                obscureText:
+                    (MyAddDependentController.cPasswordVisibility.value),
                 // onChanged: ((value) {
                 //   MySignupController.ToggleCPasswordVisibility();
                 // }),
@@ -172,12 +164,13 @@ class _SignupViewState extends State<SignupView> {
                   hintText: "Confirm Password",
                   prefixIcon: Icon(Icons.key_outlined),
                   suffixIcon: InkWell(
-                    child: Icon(MySignupController.cPasswordVisibility.value
-                        ? Icons.visibility_outlined
-                        : Icons.visibility_off_outlined),
+                    child: Icon(
+                        MyAddDependentController.cPasswordVisibility.value
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined),
                     onTap: () {
-                      MySignupController.cPasswordVisibility.value =
-                          !MySignupController.cPasswordVisibility.value;
+                      MyAddDependentController.cPasswordVisibility.value =
+                          !MyAddDependentController.cPasswordVisibility.value;
                     },
                   ),
                 ),
@@ -211,44 +204,47 @@ class _SignupViewState extends State<SignupView> {
                               context: context,
                               builder: (BuildContext context) {
                                 return SingleChildScrollView(
-                                    child: Container(
-                                  decoration: BoxDecoration(
-                                      borderRadius: new BorderRadius.only(
-                                          topLeft: const Radius.circular(25.0),
-                                          topRight:
-                                              const Radius.circular(25.0))),
-                                  child: Align(
-                                    child: Column(
-                                      children: <Widget>[
-                                        Align(
-                                          alignment: Alignment.topLeft,
-                                          child: Container(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: new BorderRadius.only(
+                                            topLeft:
+                                                const Radius.circular(25.0),
+                                            topRight:
+                                                const Radius.circular(25.0))),
+                                    child: Align(
+                                      child: Column(
+                                        children: <Widget>[
+                                          Align(
+                                            alignment: Alignment.topLeft,
+                                            child: Container(
+                                              margin: EdgeInsets.fromLTRB(
+                                                  20, 19, 0, 0),
+                                              child: Text(
+                                                "Terms & Conditions",
+                                                style: GoogleFonts.dmSans(
+                                                    fontSize: 24,
+                                                    fontWeight:
+                                                        FontWeight.w700),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: 18),
+                                          Container(
                                             margin: EdgeInsets.fromLTRB(
-                                                20, 19, 0, 0),
+                                                20, 0, 19, 0),
                                             child: Text(
-                                              "Terms & Conditions",
+                                              'Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus.Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus.Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dctum porta. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Curabitur,Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus.Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus.Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dctum porta. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Curabitur',
                                               style: GoogleFonts.dmSans(
-                                                  fontSize: 24,
-                                                  fontWeight: FontWeight.w700),
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w400,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        SizedBox(height: 18),
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(20, 0, 19, 0),
-                                          child: Text(
-                                            'Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus.Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus.Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dctum porta. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Curabitur,Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus.Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus.Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dctum porta. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Curabitur',
-                                            style: GoogleFonts.dmSans(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ));
+                                );
                               },
                             );
                           },
@@ -262,9 +258,9 @@ class _SignupViewState extends State<SignupView> {
                 controlAffinity: ListTileControlAffinity
                     .leading, // ListTileControlAffinity.trailing
                 // selected: MySignupController.termChecked.value,
-                value: MySignupController.termChecked.value,
+                value: MyAddDependentController.termChecked.value,
                 onChanged: (term) {
-                  MySignupController.ToggleTermChecked();
+                  MyAddDependentController.ToggleTermChecked();
                   // terms= MySignupController.termChecked.value;
                 },
               ),
@@ -284,7 +280,7 @@ class _SignupViewState extends State<SignupView> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0)),
                 onPressed: () {
-                  MySignupController.signUp(
+                  MyAddDependentController.addDependent(
                       _fullNameController.text,
                       _emailController.text,
                       _passwordController.text,
@@ -298,7 +294,7 @@ class _SignupViewState extends State<SignupView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    if (MySignupController.isLoading.value == true) ...[
+                    if (MyAddDependentController.isLoading.value == true) ...[
                       CircularProgressIndicator(
                         color: Colors.white,
                         strokeWidth: 1.5,
@@ -309,7 +305,7 @@ class _SignupViewState extends State<SignupView> {
                       child: Align(
                         alignment: Alignment.center,
                         child: Text(
-                          "Sign up",
+                          "Add Dependent",
                           style: GoogleFonts.dmSans(
                               color: Colors.white,
                               fontSize: 20.0,
@@ -326,28 +322,34 @@ class _SignupViewState extends State<SignupView> {
             height: 24,
           ),
           Container(
-            child: RichText(
-              text: TextSpan(
-                text: 'Already have an account? ',
-                style: GoogleFonts.dmSans(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    color: Color.fromRGBO(157, 163, 173, 1)),
-                children: <TextSpan>[
-                  TextSpan(
-                      text: 'Sign In',
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          Get.toNamed(Routes.LOGIN);
-                        },
-                      style: GoogleFonts.dmSans(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          color: Color.fromRGBO(24, 90, 219, 1))),
-                ],
-              ),
+            margin: EdgeInsets.fromLTRB(16, 0, 16, 0),
+            child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Existing Dependent ',
+                  style: GoogleFonts.dmSans(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black),
+                )),
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          Container(
+            child: Obx(
+              () => ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  padding: const EdgeInsets.symmetric(vertical: 4.0),
+                  itemCount: addTaskController.dependents.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return NoCheckboxChildList(
+                      index: index,
+                    );
+                  }),
             ),
-          )
+          ),
         ],
       ),
     ));

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 
 import 'splash_controller.dart';
@@ -13,12 +13,12 @@ class SplashView extends GetView<SplashController> {
       //   title: const Text('Splash View'),
       //   centerTitle: true,
       // ),
-
+      resizeToAvoidBottomInset: false,
       body: Center(
         child: Column(
           children: [
             SizedBox(
-              height: 255,
+              height: 307,
             ),
             Align(
               child: Image.asset(
@@ -29,12 +29,17 @@ class SplashView extends GetView<SplashController> {
             ),
             Text(
               'RemindMi',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              style:
+                  GoogleFonts.dmSans(fontSize: 30, fontWeight: FontWeight.w700),
             ),
             SizedBox(
-              height: 300,
+              height: 246,
             ),
-            Text('V.1.0')
+            Text(
+              'V.1.0',
+              style:
+                  GoogleFonts.dmSans(fontSize: 22, fontWeight: FontWeight.w500),
+            )
           ],
         ),
         //

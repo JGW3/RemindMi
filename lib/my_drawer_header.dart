@@ -29,7 +29,7 @@ class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
             ),
           ),
           Text(
-            (getStorge.read("id") != null ? (getStorge.read("id")) : ('')),
+            (getStorge.read("fullName") != null ? (getStorge.read("fullName")) : ('')),
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
           Text(

@@ -5,9 +5,8 @@ import 'package:get_storage/get_storage.dart';
 import 'package:remindmi/app/routes/app_pages.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class LandingPageController extends GetxController {
+class ManageController extends GetxController {
   final getStorge = GetStorage();
-  final _auth = FirebaseAuth.instance;
 
   @override
   void onInit() {
