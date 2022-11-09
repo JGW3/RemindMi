@@ -1,22 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import 'package:remindmi/accessibility.dart';
 import 'package:remindmi/app/modules/home/views/dashboard_view.dart';
 import 'package:remindmi/app/modules/home/views/manage_view.dart';
-import 'package:remindmi/app/modules/home/widget/home_page_task_card.dart';
-import 'package:remindmi/app/modules/parenthome/parent_home_view.dart';
-import 'package:remindmi/app/routes/app_pages.dart';
-import 'package:remindmi/constants/images.dart';
-import 'package:remindmi/credits.dart';
-import 'package:remindmi/dashboard.dart';
-import 'package:remindmi/my_drawer_header.dart';
-import 'package:remindmi/privacy_policy.dart';
-import 'package:remindmi/settings.dart';
-
-import '../controllers/home_controller.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

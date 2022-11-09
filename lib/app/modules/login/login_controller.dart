@@ -2,12 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:remindmi/app/helper/show_custome_snack_bar.dart';
+import 'package:remindmi/app/helper/show_custom_snack_bar.dart';
 import 'package:remindmi/app/routes/app_pages.dart';
 
 class LoginController extends GetxController {
-  final getStorge = GetStorage();
-  final _auth = FirebaseAuth.instance;
+  final getStorage = GetStorage();
   var emailError = "".obs;
   var passwordError = "".obs;
   var extraError = "".obs;
@@ -69,7 +68,7 @@ class LoginController extends GetxController {
       isLoading.value = false;
       print(user);
       route();
-      showCustomSnackBarSuccess("login successfull", title: "success");
+      showCustomSnackBarSuccess("login successful", title: "success");
     } on FirebaseAuthException catch (e) {
       if (e.code == "user-not-found") {
         emailError.value = "User not found !";
@@ -105,10 +104,10 @@ class LoginController extends GetxController {
         .then((DocumentSnapshot documentSnapshot) {
       if (documentSnapshot.exists) {
         // if (documentSnapshot.get('role') == "parent") {
-        getStorge.write("id", user.uid);
-        getStorge.write("fullName", documentSnapshot.get('fullName'));
-        getStorge.write("email", user.email);
-        getStorge.write("role", documentSnapshot.get('role'));
+        getStorage.write("id", user.uid);
+        getStorage.write("fullName", documentSnapshot.get('fullName'));
+        getStorage.write("email", user.email);
+        getStorage.write("role", documentSnapshot.get('role'));
         Get.offAllNamed(Routes.HOME);
         // keep this for usa
         // Get.offAllNamed(Routes.BOTTOMNAVIGATION);

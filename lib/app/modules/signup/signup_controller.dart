@@ -2,13 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:remindmi/app/helper/show_custome_snack_bar.dart';
-import 'package:remindmi/app/modules/login/login_view.dart';
-import 'package:remindmi/app/modules/signup/signup_view.dart';
+import 'package:remindmi/app/helper/show_custom_snack_bar.dart';
 import 'package:remindmi/app/routes/app_pages.dart';
 
 class SignupController extends GetxController {
-  final getStorge = GetStorage();
+  final getStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
 
   var emailError = "".obs;
@@ -105,7 +103,6 @@ class SignupController extends GetxController {
   }
 
   postDetailsToFirestore(String fullName, String email, String role) async {
-    FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     var user = _auth.currentUser;
     CollectionReference ref = FirebaseFirestore.instance.collection('users');
     isLoading.value = false;

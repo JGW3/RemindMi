@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:remindmi/app/helper/show_custome_snack_bar.dart';
+import 'package:remindmi/app/helper/show_custom_snack_bar.dart';
 
 class ForgotPasswordController extends GetxController {
-  final getStorge = GetStorage();
+  final getStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
   var isLoading = false.obs;
 

@@ -1,10 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:remindmi/app/modules/forgotpassword/forgotpassword_controller.dart';
-
 import 'package:remindmi/app/routes/app_pages.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,10 +18,8 @@ class _ForgotPassword_viewState extends State<ForgotPassword_view> {
   @override
   Widget build(BuildContext context) {
     TextEditingController _emailController = TextEditingController(text: '');
-    TextEditingController _newpasswordController =
-        TextEditingController(text: '');
-    TextEditingController _confirmnewpasswordController =
-        TextEditingController(text: '');
+    TextEditingController _newpasswordController = TextEditingController(text: '');
+    TextEditingController _confirmnewpasswordController = TextEditingController(text: '');
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

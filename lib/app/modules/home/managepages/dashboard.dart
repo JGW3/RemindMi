@@ -3,7 +3,6 @@ import 'package:remindmi/app/components/task_list_card.dart';
 import 'package:remindmi/app/models/home_task_list_model.dart';
 
 class DashboardPage extends StatelessWidget {
-  int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -24,12 +23,6 @@ class DashboardPage extends StatelessWidget {
       style: optionStyle,
     ),
   ];
-
-  // void _onItemTapped(int index) {
-  //   setState(() {
-  //     _selectedIndex = index;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
