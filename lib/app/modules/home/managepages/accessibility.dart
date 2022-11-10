@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:remindmi/app/modules/home/widget/manage_card.dart';
-import 'package:toggle_switch/toggle_switch.dart';
+//import 'package:toggle_switch/toggle_switch.dart';
 
 
 class AccessibilityPage extends StatefulWidget {
