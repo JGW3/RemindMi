@@ -9,9 +9,17 @@ class _CreditsPageState extends State<CreditsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Created by Nikhil Adhikari, Daniel Derheim, Bishnu Sharma, and John West",
-          textAlign: TextAlign.center,),
+      body: Container(
+        margin: new EdgeInsets.symmetric(horizontal: 20.0, vertical: 150.0),
+        child: Text("Created by Nikhil Adhikari, Daniel Derheim, Bishnu Sharma, and John West.",
+          style: TextStyle(
+            fontSize: 20.0,
+            color: Colors.black,
+            fontWeight: FontWeight.w600,
+          ),
+          textAlign: TextAlign.center,
+        ),
+
       ),
     );
   }

@@ -31,9 +31,9 @@ class _DashboardViewState extends State<DashboardView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Hi',
+              'Hi! 👋',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 26,
                 color: Colors.black,
                 fontWeight: FontWeight.w600,
               ),
@@ -52,7 +52,7 @@ class _DashboardViewState extends State<DashboardView> {
                 Text(
                   'Running Tasks',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 20,
                     color: Colors.purple,
                     fontWeight: FontWeight.w600,
                   ),
