@@ -72,7 +72,7 @@ class ManageView extends StatelessWidget {
           ),SliverToBoxAdapter(
             child: ManageCard(
               icon: Icons.privacy_tip,
-              title: 'Privacy Policy',
+              title: 'Terms & Conditions',
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context){
                   return PrivacyPolicyPage();
