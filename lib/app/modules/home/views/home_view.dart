@@ -18,18 +18,18 @@ class _HomeViewState extends State<HomeView> {
         return [
             PersistentBottomNavBarItem(
                 icon: Icon(CupertinoIcons.home),
+                iconSize: 20,
                 title: ("Home"),
                 textStyle: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600
                 ),
-                iconSize: 20,
                 activeColorPrimary: CupertinoColors.activeBlue,
                 inactiveColorPrimary: CupertinoColors.systemGrey,
             ),
             PersistentBottomNavBarItem(
                 icon: Icon(CupertinoIcons.settings),
-                iconSize: 20,
+                iconSize: 24,
                 title: ("Manage"),
                 textStyle: TextStyle(
                   fontSize: 14,
