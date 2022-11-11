@@ -15,12 +15,12 @@ class SplashController extends GetxController {
   void onReady() {
     super.onReady();
     if (getStorage.read("id") != null) {
-      Future.delayed(const Duration(milliseconds: 2000), () {
+      Future.delayed(const Duration(milliseconds: 1500), () {
         // Get.offAllNamed(Routes.HOME);
         Get.offAllNamed(Routes.BOTTOMNAVIGATIION);
       });
     } else {
-      Future.delayed(const Duration(milliseconds: 2000), () {
+      Future.delayed(const Duration(milliseconds: 1500), () {
         Get.offAllNamed(Routes.LANDINGPAGE);
       });
     }

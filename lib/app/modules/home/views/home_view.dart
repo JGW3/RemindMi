@@ -3,15 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:remindmi/accessibility.dart';
 import 'package:remindmi/app/modules/parenthome/parent_home_view.dart';
 import 'package:remindmi/app/routes/app_pages.dart';
-import 'package:remindmi/credits.dart';
-
-import 'package:remindmi/my_drawer_header.dart';
-import 'package:remindmi/privacy_policy.dart';
-import 'package:remindmi/settings.dart';
-
+import 'package:remindmi/app/modules/home/managepages/credits.dart';
+import 'package:remindmi/app/modules/home/managepages/privacy_policy.dart';
+import 'package:remindmi/app/modules/home/managepages/settings.dart';
+import 'package:remindmi/app/modules/home/managepages/accessibility.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -88,7 +85,6 @@ class _HomePageState extends State<HomePage> {
           child: Container(
             child: Column(
               children: [
-                MyHeaderDrawer(),
                 ParentDrawerList(),
               ],
             ),
