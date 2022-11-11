@@ -1,8 +1,7 @@
+//Connects view and controller files
+
 import 'package:get/get.dart';
-
 import 'splash_controller.dart';
-
-
 
 class SplashBinding extends Bindings {
   @override

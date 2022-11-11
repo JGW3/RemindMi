@@ -1,14 +1,14 @@
+//Sign up page view backend
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:remindmi/app/helper/show_custome_snack_bar.dart';
-import 'package:remindmi/app/modules/login/login_view.dart';
-import 'package:remindmi/app/modules/signup/signup_view.dart';
 import 'package:remindmi/app/routes/app_pages.dart';
 
 class SignupController extends GetxController {
-  final getStorge = GetStorage();
+  final getStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
 
   var emailError = "".obs;
@@ -113,7 +113,7 @@ class SignupController extends GetxController {
     showCustomSnackBarSuccess("Account created successfully", title: "success");
 
     ref.doc(user!.uid).set({
-      'parent': getStorge.read('id'),
+      'parent': getStorage.read('id'),
       'fullName': fullName,
       'email': email,
       'role': role

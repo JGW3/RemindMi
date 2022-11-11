@@ -9,7 +9,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:remindmi/app/services/firestore_db.dart';
 
 class AddTaskController extends GetxController {
-  final getStorge = GetStorage();
+  final getStorage = GetStorage();
   var isLoading = false.obs;
   var isSuccess = false.obs;
   var selectedPriority = 'Select Priority'.obs;
@@ -61,7 +61,7 @@ class AddTaskController extends GetxController {
                   CollectionReference ref =
                       FirebaseFirestore.instance.collection('tasks');
                   ref.add({
-                    'parent': getStorge.read('id'),
+                    'parent': getStorage.read('id'),
                     'name': taskName,
                     'description': taskDescription,
                     'date': selectedDate.text,

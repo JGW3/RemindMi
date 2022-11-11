@@ -1,3 +1,5 @@
+//View for Home page
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -71,8 +73,8 @@ class _HomePageState extends State<HomePage> {
       container = ParentHomeView();
     }
 
-    final getStorge = GetStorage();
-    final role = getStorge.read("role");
+    final getStorage = GetStorage();
+    final role = getStorage.read("role");
 
     return Scaffold(
       appBar: AppBar(
@@ -97,8 +99,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget ParentDrawerList() {
-    final getStorge = GetStorage();
-    final role = getStorge.read("role");
+    final getStorage = GetStorage();
+    final role = getStorage.read("role");
     return Container(
       padding: EdgeInsets.only(
         top: 15,
@@ -128,13 +130,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget menuItem(int id, String title, IconData icon, bool selected) {
-    final getStorge = GetStorage();
+    final getStorage = GetStorage();
     return Material(
       color: selected ? Colors.grey[300] : Colors.transparent,
       child: InkWell(
         onTap: () {
           if (id == 7) {
-            getStorge.erase();
+            getStorage.erase();
             Get.offAllNamed(Routes.LOGIN);
           }
           Navigator.pop(context);

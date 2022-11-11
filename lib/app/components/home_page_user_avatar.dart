@@ -1,3 +1,5 @@
+//Avatar image on task cards
+
 import 'package:flutter/material.dart';
 import 'package:remindmi/app/components/custom_network_image.dart';
 

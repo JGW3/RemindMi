@@ -1,3 +1,5 @@
+//Login page backend
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
@@ -6,7 +8,7 @@ import 'package:remindmi/app/helper/show_custome_snack_bar.dart';
 import 'package:remindmi/app/routes/app_pages.dart';
 
 class LoginController extends GetxController {
-  final getStorge = GetStorage();
+  final getStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
   var emailError = "".obs;
   var passwordError = "".obs;
@@ -105,10 +107,10 @@ class LoginController extends GetxController {
         .then((DocumentSnapshot documentSnapshot) {
       if (documentSnapshot.exists) {
         // if (documentSnapshot.get('role') == "parent") {
-        getStorge.write("id", user.uid);
-        getStorge.write("fullName", documentSnapshot.get('fullName'));
-        getStorge.write("email", user.email);
-        getStorge.write("role", documentSnapshot.get('role'));
+        getStorage.write("id", user.uid);
+        getStorage.write("fullName", documentSnapshot.get('fullName'));
+        getStorage.write("email", user.email);
+        getStorage.write("role", documentSnapshot.get('role'));
         // Get.offAllNamed(Routes.HOME);
         // keep this for usa
         Get.offAllNamed(Routes.BOTTOMNAVIGATIION);

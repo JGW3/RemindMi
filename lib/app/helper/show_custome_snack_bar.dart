@@ -1,3 +1,5 @@
+//Shows a success/error message when the user logs in
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

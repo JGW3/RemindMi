@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+//Splash page backend
+
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:remindmi/app/routes/app_pages.dart';
 
 class SplashController extends GetxController {
-  final getStorge = GetStorage();
+  final getStorage = GetStorage();
   @override
   void onInit() {
     super.onInit();
@@ -14,7 +14,7 @@ class SplashController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    if (getStorge.read("id") != null) {
+    if (getStorage.read("id") != null) {
       Future.delayed(const Duration(milliseconds: 2000), () {
         // Get.offAllNamed(Routes.HOME);
         Get.offAllNamed(Routes.BOTTOMNAVIGATIION);

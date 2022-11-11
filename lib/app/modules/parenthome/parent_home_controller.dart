@@ -1,9 +1,10 @@
+//Admin account home page backend
+
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:remindmi/app/routes/app_pages.dart';
 
 class ParentHomeController extends GetxController {
-  final getStorge = GetStorage();
+  final getStorage = GetStorage();
   @override
   void onInit() {
     super.onInit();
@@ -20,8 +21,8 @@ class ParentHomeController extends GetxController {
   }
 
   // login() {
-  //   getStorge.write("id", 1);
-  //   getStorge.write("name", "Ripples Code");
+  //   getStorage.write("id", 1);
+  //   getStorage.write("name", "Ripples Code");
   //   Get.offAllNamed(Routes.HOME);
   // }
 }

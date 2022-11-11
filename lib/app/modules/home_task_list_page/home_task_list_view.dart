@@ -16,7 +16,7 @@ class HomeTaskListViews extends StatefulWidget {
 
 class _HomeTaskListViewsState extends State<HomeTaskListViews> {
   final home_task_controller = Get.put(HomeTaskListController());
-  final getStorge = GetStorage();
+  final getStorage = GetStorage();
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class _HomeTaskListViewsState extends State<HomeTaskListViews> {
       //                     color: Color.fromARGB(255, 0, 0, 0)),
       //                 children: <InlineSpan>[
       //                   TextSpan(
-      //                     text: GetFirtsName(getStorge.read('fullName')),
+      //                     text: GetFirtsName(getStorage.read('fullName')),
       //                     style: GoogleFonts.dmSans(
       //                         fontSize: 32.sp,
       //                         fontWeight: FontWeight.w700,
@@ -116,7 +116,7 @@ class _HomeTaskListViewsState extends State<HomeTaskListViews> {
                         color: Color.fromARGB(255, 0, 0, 0)),
                     children: <InlineSpan>[
                       TextSpan(
-                        text: GetFirtsName(getStorge.read('fullName')),
+                        text: GetFirtsName(getStorage.read('fullName')),
                         style: GoogleFonts.dmSans(
                             fontSize: 32.sp,
                             fontWeight: FontWeight.w700,

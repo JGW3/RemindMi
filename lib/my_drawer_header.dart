@@ -7,7 +7,7 @@ class MyHeaderDrawer extends StatefulWidget {
 }
 
 class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
-  final getStorge = GetStorage();
+  final getStorage = GetStorage();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,12 +29,12 @@ class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
             ),
           ),
           Text(
-            (getStorge.read("fullName") != null ? (getStorge.read("fullName")) : ('')),
+            (getStorage.read("fullName") != null ? (getStorage.read("fullName")) : ('')),
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
           Text(
-            (getStorge.read("email") != null
-                ? (getStorge.read("email"))
+            (getStorage.read("email") != null
+                ? (getStorage.read("email"))
                 : ('')),
             style: TextStyle(
               color: Colors.grey[200],
@@ -42,7 +42,7 @@ class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
             ),
           ),
           Text(
-            (getStorge.read("role") != null ? (getStorge.read("role")) : ('')),
+            (getStorage.read("role") != null ? (getStorage.read("role")) : ('')),
             style: TextStyle(
               color: Colors.grey[200],
               fontSize: 14,

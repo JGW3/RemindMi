@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:remindmi/app/modules/addtask/add_task_controller.dart';
-import 'package:remindmi/app/modules/home_task_list_page/home_task_list_controller.dart';
-import 'package:remindmi/app/components/home_page_user_avatar.dart';
-import 'package:remindmi/constants/images.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class NoCheckboxChildList extends StatelessWidget {

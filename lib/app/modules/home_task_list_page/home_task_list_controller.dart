@@ -5,7 +5,7 @@ import 'package:remindmi/app/models/home_task_list_model.dart';
 import 'package:remindmi/app/services/firestore_db.dart';
 
 class HomeTaskListController extends GetxController {
-  final getStorge = GetStorage();
+  final getStorage = GetStorage();
   final tasks = <Task>[].obs;
 
   // var _home_tasks ={}.obs;

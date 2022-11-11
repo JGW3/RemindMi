@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:remindmi/app/modules/addDependent/add_dependent_binding.dart';
 import 'package:remindmi/app/modules/addDependent/add_dependent_view.dart';

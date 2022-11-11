@@ -1,3 +1,5 @@
+//Connects view and controller files
+
 import 'package:get/get.dart';
 import 'package:remindmi/app/modules/forgotpassword/forgotpassword_controller.dart';
 

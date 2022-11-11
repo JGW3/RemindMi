@@ -1,3 +1,5 @@
+//Administrator account home page view
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:remindmi/app/modules/signup/signup_controller.dart';

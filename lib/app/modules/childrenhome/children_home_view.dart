@@ -1,7 +1,8 @@
+//View for dependent home screen
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:remindmi/app/modules/childrenhome/children_home_controller.dart';
-import 'package:remindmi/app/modules/signup/signup_controller.dart';
 
 class ChildrenHomeView extends GetView<ChildrenHomeController> {
   const ChildrenHomeView({Key? key}) : super(key: key);

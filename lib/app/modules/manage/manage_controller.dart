@@ -6,7 +6,7 @@ import 'package:remindmi/app/routes/app_pages.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ManageController extends GetxController {
-  final getStorge = GetStorage();
+  final getStorage = GetStorage();
 
   @override
   void onInit() {
