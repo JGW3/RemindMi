@@ -24,7 +24,7 @@ class _LandingPage_viewState extends State<LandingPage_view> {
             height: 65.h,
           ),
           Container(
-            child: Text("Let's you in",
+            child: Text("Let's go",
                 style: GoogleFonts.dmSans(
                     fontWeight: FontWeight.w700, fontSize: 41.sp)),
           ),
