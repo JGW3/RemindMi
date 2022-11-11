@@ -25,17 +25,14 @@ class _ManageViewState extends State<ManageView> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
-          toolbarHeight: 133,
+          toolbarHeight: 100,
           elevation: 0,
           title: Column(
             children: [
               Container(
                   alignment: Alignment.centerLeft,
                   margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: new IconButton(
-                      color: Colors.black,
-                      onPressed: () {},
-                      icon: Icon(Icons.arrow_back))),
+              ),
               Container(
                 alignment: Alignment.topLeft,
                 margin: EdgeInsets.fromLTRB(16, 0, 0, 0),
@@ -74,22 +71,22 @@ class _ManageViewState extends State<ManageView> {
                   },
                 ),
               ),
-              SliverToBoxAdapter(
-                child: ManageCard(
-                  icon: Icons.article,
-                  title: 'All Tasks',
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return AccessibilityPage();
-                        },
-                      ),
-                    );
-                  },
-                ),
-              ),
+              // SliverToBoxAdapter(
+              //   child: ManageCard(
+              //     icon: Icons.article,
+              //     title: 'All Tasks',
+              //     onTap: () {
+              //       Navigator.push(
+              //         context,
+              //         MaterialPageRoute(
+              //           builder: (context) {
+              //             return AccessibilityPage(); //change
+              //           },
+              //         ),
+              //       );
+              //     },
+              //   ),
+              // ),
               SliverToBoxAdapter(
                 child: ManageCard(
                   icon: Icons.accessible,
@@ -140,9 +137,8 @@ class _ManageViewState extends State<ManageView> {
               ),
               SliverToBoxAdapter(
                 child: ManageCard(
-                  icon: Icons.gpp_good,
-                  // icon: Icons.beenhere,
-                  title: 'Privacy Policy',
+                  icon: Icons.article_rounded,
+                  title: 'Terms & Conditions',
                   onTap: () {
                     Navigator.push(
                       context,
@@ -153,13 +149,6 @@ class _ManageViewState extends State<ManageView> {
                       ),
                     );
                   },
-                ),
-              ),
-              SliverToBoxAdapter(
-                child: ManageCard(
-                  icon: Icons.article_rounded,
-                  title: 'Terms & Condition',
-                  onTap: () {},
                 ),
               ),
               SliverToBoxAdapter(

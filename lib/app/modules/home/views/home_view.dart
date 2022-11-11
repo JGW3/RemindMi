@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
         top: 15,
       ),
       child: Column(
-        // shows the list of menu drawer
+        // shows the list of menu drawer options
         children: [
           if (role == 'parent') ...[
             menuItem(6, "Add Dependent", Icons.dashboard_outlined,
@@ -114,7 +114,6 @@ class _HomePageState extends State<HomePage> {
               currentPage == DrawerSections.accessibility ? true : false),
           menuItem(3, "Settings", Icons.settings_outlined,
               currentPage == DrawerSections.settings ? true : false),
-          Divider(),
           menuItem(4, "Credits", Icons.notifications_outlined,
               currentPage == DrawerSections.credits ? true : false),
           menuItem(5, "Privacy policy", Icons.privacy_tip_outlined,

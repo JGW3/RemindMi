@@ -89,17 +89,17 @@ class AddDependentController extends GetxController {
           });
         } else {
           isLoading.value = false;
-          showCustomSnackBar("Confirm Password didn't matched !",
+          showCustomSnackBar("Password confirmation doesn't match.",
               title: "Error");
         }
       } else {
         isLoading.value = false;
-        showCustomSnackBar("Please fill all the fields", title: "Error");
+        showCustomSnackBar("Please fill in all fields.", title: "Error");
       }
     } else {
       isLoading.value = false;
-      showCustomSnackBar("Please accept the terms and condition first! ",
-          title: "Terms & Condition");
+      showCustomSnackBar("Please accept the Terms & Conditions before continuing.",
+          title: "Terms & Conditions");
     }
   }
 
@@ -109,7 +109,7 @@ class AddDependentController extends GetxController {
     CollectionReference ref =
         FirebaseFirestore.instance.collection('dependent');
     isLoading.value = false;
-    showCustomSnackBarSuccess("Account created successfully", title: "success");
+    showCustomSnackBarSuccess("Account created successfully", title: "Success");
     print("#############################################");
     print(fullName);
     print(email);

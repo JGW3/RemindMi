@@ -71,24 +71,24 @@ class LoginController extends GetxController {
       isLoading.value = false;
       print(user);
       route();
-      showCustomSnackBarSuccess("login successfull", title: "success");
+      showCustomSnackBarSuccess("Login successful", title: "Success");
     } on FirebaseAuthException catch (e) {
       if (e.code == "user-not-found") {
-        emailError.value = "User not found !";
+        emailError.value = "User not found!";
         showCustomSnackBar("User not found", title: "Email");
         isEmailError.value = true;
       } else if (e.code == "invalid-email") {
         isEmailError.value = true;
         showCustomSnackBar("Format error", title: "Email");
-        emailError.value = 'format error !';
+        emailError.value = 'Format error!';
       } else if (e.code == 'wrong-password') {
         isPasswordError.value = true;
-        showCustomSnackBar("Incorrect Password", title: "Password");
+        showCustomSnackBar("Incorrect password", title: "Password");
         passwordError.value = 'Incorrect password';
       } else if (e.code == 'unknown') {
         isExtraError.value = true;
-        showCustomSnackBar("Please fill all the fields", title: "Error");
-        extraError.value = 'Please fill all the fields';
+        showCustomSnackBar("Please fill all the fields.", title: "Error");
+        extraError.value = 'Please fill all the fields.';
       } else {
         isExtraError.value = true;
         showCustomSnackBar(e.code, title: "Error");

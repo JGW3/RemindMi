@@ -100,7 +100,7 @@ class SignupController extends GetxController {
     } else {
       isLoading.value = false;
       showCustomSnackBar("Please accept the terms and condition first! ",
-          title: "Terms & Condition");
+          title: "Terms & Conditions");
     }
   }
 
