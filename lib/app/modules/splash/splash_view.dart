@@ -1,7 +1,8 @@
+//Splash page (page when the app first opens)
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
-
 import 'splash_controller.dart';
 
 class SplashView extends GetView<SplashController> {

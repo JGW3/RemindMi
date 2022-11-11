@@ -1,3 +1,5 @@
+//View for dependent home screen
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:remindmi/app/modules/childrenhome/children_home_controller.dart';

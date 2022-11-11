@@ -1,3 +1,5 @@
+//Accessibility page
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:remindmi/app/modules/home/widget/manage_card.dart';
@@ -11,7 +13,7 @@ class AccessibilityPage extends StatefulWidget {
 
 class _AccessibilityPageState extends State<AccessibilityPage> {
 
-  bool val1 = true;
+  bool val1 = false;
   bool val2 = false;
 
   onChangeFunctionBT(bool newValue1) {

@@ -1,3 +1,5 @@
+//Settings page
+
 import 'package:flutter/material.dart';
 import 'package:remindmi/app/modules/home/managepages/delete_profile.dart';
 import 'package:remindmi/app/modules/home/managepages/edit_profile.dart';

@@ -1,3 +1,5 @@
+//Delete profile button
+
 import 'package:flutter/material.dart';
 
 class DeleteProfilePage extends StatefulWidget {

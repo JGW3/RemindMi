@@ -1,3 +1,5 @@
+//Terms and conditions page
+
 import 'package:flutter/material.dart';
 
 class PrivacyPolicyPage extends StatefulWidget {
@@ -12,17 +14,18 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
       margin: const EdgeInsets.only(bottom: 15.0),
       child: new Scaffold(
         appBar: AppBar(
+          iconTheme: IconThemeData(
+            color: Colors.grey,
+          ),
           backgroundColor: Colors.white,
           toolbarHeight: 100,
           elevation: 0,
-          title: Center(
-            child: Text(
-              'Terms & Conditions          ',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.black,
-                fontWeight: FontWeight.w600,
-              ),
+          title: Text(
+            'Terms & Conditions',
+            style: TextStyle(
+              fontSize: 24,
+              color: Colors.black,
+              fontWeight: FontWeight.w600,
             ),
           ),
       ),

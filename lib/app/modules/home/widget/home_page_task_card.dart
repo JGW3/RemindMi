@@ -1,3 +1,5 @@
+//Defines the UI for the task cards
+
 import 'package:flutter/material.dart';
 import 'package:remindmi/app/modules/home/widget/home_page_user_avatar.dart';
 import 'package:remindmi/constants/images.dart';
