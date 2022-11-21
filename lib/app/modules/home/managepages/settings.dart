@@ -32,7 +32,6 @@ class _SettingsPageState extends State<SettingsPage> {
             fontWeight: FontWeight.w600,
           ),
         ),
-
       ),
       body: CustomScrollView(
         slivers: [

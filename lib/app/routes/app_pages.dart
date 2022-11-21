@@ -21,7 +21,6 @@ import 'package:remindmi/app/modules/signup/signup_view.dart';
 import 'package:remindmi/app/modules/signup/signup_binding.dart';
 import 'package:remindmi/app/modules/splash/splash_binding.dart';
 import 'package:remindmi/app/modules/splash/splash_view.dart';
-
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 
