@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:remindmi/app/components/privacy_policy.dart';
 import 'package:remindmi/app/components/terms&condition.dart';
 import 'package:remindmi/app/modules/signup/signup_controller.dart';
 import 'package:remindmi/app/routes/app_pages.dart';
@@ -183,14 +184,14 @@ class _SignupViewState extends State<SignupView> {
                 checkboxShape: CircleBorder(),
                 title: RichText(
                   text: TextSpan(
-                    text: 'I agree to privacy ',
+                    text: 'I agree to ',
                     style: GoogleFonts.dmSans(
                         fontSize: 18,
                         fontWeight: FontWeight.w400,
                         color: Color.fromARGB(255, 0, 0, 0)),
                     children: <TextSpan>[
                       TextSpan(
-                        text: 'policy & terms',
+                        text: 'Privacy Policy ',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             showModalBottomSheet<void>(
@@ -208,7 +209,7 @@ class _SignupViewState extends State<SignupView> {
                                               const Radius.circular(25.0))),
                                   child: Align(
                                     child: Column(
-                                      children: <Widget>[TermsAndCondtions()],
+                                      children: <Widget>[PrivacyPolicy()],
                                     ),
                                   ),
                                 ));
@@ -218,6 +219,44 @@ class _SignupViewState extends State<SignupView> {
                         style: GoogleFonts.dmSans(
                             fontSize: 15,
                             color: Color.fromRGBO(24, 90, 219, 1)),
+                      ),
+                      TextSpan(
+                        text: '&',
+                        style: GoogleFonts.dmSans(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            color: Color.fromARGB(255, 0, 0, 0)),
+                      ),
+                      TextSpan(
+                        text: ' Terms and Conditions ',
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            showModalBottomSheet<void>(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              context: context,
+                              builder: (BuildContext context) {
+                                return SingleChildScrollView(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: new BorderRadius.only(
+                                              topLeft: const Radius.circular(25.0),
+                                              topRight:
+                                              const Radius.circular(25.0))),
+                                      child: Align(
+                                        child: Column(
+                                          children: <Widget>[TermsAndCondtions()],
+                                        ),
+                                      ),
+                                    ));
+                              },
+                            );
+                          },
+                        style: GoogleFonts.dmSans(
+                            fontSize: 15,
+                            color: Color.fromRGBO(24, 90, 219, 1)),
+
                       ),
                     ],
                   ),

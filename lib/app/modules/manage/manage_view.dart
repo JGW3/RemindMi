@@ -9,6 +9,7 @@ import 'package:remindmi/app/modules/manage/managepages/credits.dart';
 import 'package:remindmi/app/modules/manage/managepages/privacy_policy.dart';
 import 'package:remindmi/app/modules/setting/setting_view.dart';
 import 'package:remindmi/app/modules/terms_and_condition/terms_and_condition_view.dart';
+import 'package:remindmi/app/modules/privacy_policy/privacy_policy_view.dart';
 import 'package:remindmi/app/routes/app_pages.dart';
 import 'package:remindmi/app/widget/manage_card.dart';
 
@@ -147,7 +148,7 @@ class _ManageViewState extends State<ManageView> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return PrivacyPolicyPage();
+                          return PrivacyPolicyView();
                         },
                       ),
                     );
