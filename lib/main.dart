@@ -14,11 +14,11 @@ void main() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
 
   await Firebase.initializeApp(
-      // options: const FirebaseOptions(
-      //   apiKey: "AIzaSyAjHrEgelTJnSA95ucyZME2N3tM43S0JVw",
-      //   appId: "1:526204885343:android:27fe86d00f0ff83bf8beea",
-      //   messagingSenderId: "526204885343",
-      //   projectId: "remindmi-ab6c6",
+      //options: const FirebaseOptions(
+      //apiKey: "AIzaSyAjHrEgelTJnSA95ucyZME2N3tM43S0JVw",
+      //appId: "1:526204885343:android:27fe86d00f0ff83bf8beea",
+      //messagingSenderId: "526204885343",
+      //projectId: "remindmi-ab6c6",
       // ),
       );
 

@@ -32,7 +32,7 @@ class TaskListCard extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             SizedBox(
-              width: 16,
+              width: 18,
             ),
             Expanded(
                 child: Column(
@@ -42,17 +42,17 @@ class TaskListCard extends StatelessWidget {
                     row.time + ' ' + row.date,
                     style: TextStyle(
                       color: prioritySubTitle(row.priority),
-                      fontSize: 10,
+                      fontSize: 14,
                     ),
                   ),
                   SizedBox(
-                    height: 4,
+                    height: 6,
                   ),
                   Text(
                     row.name,
                     style: TextStyle(
                       color: priorityTitile(row.priority),
-                      fontSize: 16,
+                      fontSize: 20,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -62,7 +62,7 @@ class TaskListCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: prioritySubTitle(row.priority),
-                      fontSize: 12,
+                      fontSize: 14,
                     ),
                   ),
                   SizedBox(
@@ -176,10 +176,10 @@ class TaskListCard extends StatelessWidget {
         decoration: BoxDecoration(
             border: Border.all(
               color: priorityBorder(row.priority),
-              width: 2,
+              width: 4,
             ),
             color: Colors.white,
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.circular(14.0),
             boxShadow: [
               BoxShadow(
                 color: Color.fromARGB(255, 218, 218, 218),

@@ -21,121 +21,152 @@ class _HomeTaskListViewsState extends State<HomeTaskListViews> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: 32,
-          ),
-          Container(
-              margin: EdgeInsets.fromLTRB(16, 38, 0, 0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: RichText(
-                  text: TextSpan(
-                    text: 'Hi ',
-                    style: GoogleFonts.dmSans(
-                        fontSize: 32,
-                        fontWeight: FontWeight.w700,
-                        color: Color.fromARGB(255, 0, 0, 0)),
-                    children: <InlineSpan>[
-                      TextSpan(
-                        text: GetFirtsName(getStorge.read('fullName')),
+    return SafeArea(
+      child: Scaffold(
+        body: Obx(
+          () => CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 32,
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Hi ',
                         style: GoogleFonts.dmSans(
-                            fontSize: 32,
-                            fontWeight: FontWeight.w700,
-                            color: Color.fromARGB(255, 0, 0, 0)),
+                          fontSize: 32,
+                          fontWeight: FontWeight.w700,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                        ),
                       ),
-                      WidgetSpan(
-                          alignment: PlaceholderAlignment.middle,
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(18.25, 0, 0, 0),
-                            child: Image.asset(
-                              'assets/images/emoji.png',
-                              height: 35,
-                              width: 35,
-                            ),
-                          )),
+                      Text(
+                        GetFirtsName(
+                          getStorge.read('fullName'),
+                        ),
+                        style: GoogleFonts.dmSans(
+                          fontSize: 32,
+                          fontWeight: FontWeight.w700,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                        ),
+                      ),
+                      Image.asset(
+                        'assets/images/emoji.png',
+                        height: 35,
+                        width: 35,
+                      )
                     ],
                   ),
                 ),
-              )),
-          SizedBox(
-            height: 11,
-          ),
-          Container(
-            margin: EdgeInsets.fromLTRB(16, 0, 0, 0),
-            child: Align(
-                alignment: Alignment.centerLeft,
-                child: RichText(
-                  text: TextSpan(children: <InlineSpan>[
-                    WidgetSpan(
-                        alignment: PlaceholderAlignment.middle,
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 11, 0),
-                          child: Image.asset(
-                            'assets/images/chotu.png',
-                            height: 39,
-                            width: 39,
-                          ),
-                        )),
-                    TextSpan(
-                      text: 'Running Task',
+              ),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 11,
+                ),
+              ),
+              SliverPadding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                sliver: SliverToBoxAdapter(
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/chotu.png',
+                        height: 39,
+                        width: 39,
+                      ),
+                      Text(
+                        'Running Task',
+                        style: GoogleFonts.dmSans(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 69, 69, 209),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              if (home_task_controller.tasks.isNotEmpty)
+                SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                      return GestureDetector(
+                        onLongPress: () {
+                          print(index);
+                          showModalBottomSheet(
+                            backgroundColor: Colors.transparent,
+                            isScrollControlled: true,
+                            context: context,
+                            builder: (context) {
+                              return TaskViewCard(
+                                  indexNo: index,
+                                  row: home_task_controller.tasks[index],
+                                  from: 'home');
+                            },
+                          );
+                        },
+                        child: TaskListCard(
+                          index: index,
+                          row: home_task_controller.tasks[index],
+                        ),
+                      );
+                    },
+                    childCount: home_task_controller.tasks.length,
+                  ),
+                ),
+              if (home_task_controller.tasks.isEmpty)
+                SliverToBoxAdapter(
+                  child: SizedBox(
+                    height: 256,
+                  ),
+                ),
+              if (home_task_controller.tasks.isEmpty)
+                SliverPadding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  sliver: SliverToBoxAdapter(
+                    child: Text(
+                      'You have not assigned any task',
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
                       style: GoogleFonts.dmSans(
-                        fontSize: 22,
+                        fontSize: 20,
                         fontWeight: FontWeight.w500,
                         color: Color.fromARGB(255, 69, 69, 209),
                       ),
                     ),
-                  ]),
-                )),
-          ),
-          Expanded(
-            child: Obx(
-              () => ListView.builder(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                itemCount: home_task_controller.tasks.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return GestureDetector(
-                    onLongPress: () {
-                      print(index);
-                      showModalBottomSheet(
-                          backgroundColor: Colors.transparent,
-                          isScrollControlled: true,
-                          context: context,
-                          builder: (context) {
-                            return TaskViewCard(
-                                indexNo: index,
-                                row: home_task_controller.tasks[index],
-                                from: 'home');
-                          });
-                    },
-                    child: TaskListCard(
-                        index: index, row: home_task_controller.tasks[index]),
-                  );
-                },
-              ),
-            ),
-          )
-        ],
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: Color.fromARGB(255, 3, 163, 0),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        icon: Icon(Icons.add_circle_outlined),
-        label: Text(
-          'Add Task',
-          style: GoogleFonts.dmSans(
-            fontSize: 17,
-            fontWeight: FontWeight.w500,
-            color: Colors.white,
+                  ),
+                ),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 124,
+                ),
+              )
+            ],
           ),
         ),
-        onPressed: () {
-          Get.to(AddTaskView());
-        },
+        floatingActionButton: FloatingActionButton.extended(
+          backgroundColor: Color.fromARGB(255, 3, 163, 0),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          icon: Icon(Icons.add_circle_outlined),
+          label: Text(
+            'Add Task',
+            style: GoogleFonts.dmSans(
+              fontSize: 17,
+              fontWeight: FontWeight.w500,
+              color: Colors.white,
+            ),
+          ),
+          onPressed: () {
+            Get.to(AddTaskView());
+          },
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

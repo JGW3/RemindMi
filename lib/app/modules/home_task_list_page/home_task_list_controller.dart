@@ -10,7 +10,7 @@ class HomeTaskListController extends GetxController {
 
   @override
   void onInit() {
-    //here the task list is fetched and mapped from the below function
+    //the task list is fetched and mapped from the below function
     tasks.bindStream(FireStoreDB().parentGetInCompleteTasks());
 
     super.onInit();

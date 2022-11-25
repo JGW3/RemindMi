@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 
 class AccessibilityView extends StatefulWidget {
   const AccessibilityView({super.key});
@@ -11,6 +12,7 @@ class AccessibilityView extends StatefulWidget {
 }
 
 class _AccessibilityViewState extends State<AccessibilityView> {
+  
   bool val1 = false;
   bool val2 = false;
 
@@ -25,10 +27,23 @@ class _AccessibilityViewState extends State<AccessibilityView> {
       val2 = newValue2;
     });
   }
+  
+  
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    Container(
+            alignment: Alignment.topLeft,
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            child: new IconButton(
+              onPressed: () {
+                Get.back();
+              },
+              icon: Icon(Icons.arrow_back),
+            ),
+          );
+        return SafeArea(
+      
         child: Scaffold(
           body: Column(
             mainAxisAlignment: MainAxisAlignment.start,

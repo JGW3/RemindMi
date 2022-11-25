@@ -53,8 +53,8 @@ class _ManageViewState extends State<ManageView> {
                   height: 12,
                 ),
               ),
-              if (getStorage.read('role') == 'parent') ...[
-                SliverToBoxAdapter(
+              if (getStorage.read('role') == 'parent')
+              SliverToBoxAdapter(
                   child: ManageCard(
                     icon: Icons.add_box,
                     title: 'Add Dependent',
@@ -70,8 +70,7 @@ class _ManageViewState extends State<ManageView> {
                     },
                   ),
                 ),
-              ],
-              SliverToBoxAdapter(
+                SliverToBoxAdapter(
                 child: ManageCard(
                   icon: Icons.article,
                   title: 'All Task',
@@ -87,6 +86,7 @@ class _ManageViewState extends State<ManageView> {
                   },
                 ),
               ),
+              if (getStorage.read('role') == 'parent')
               SliverToBoxAdapter(
                 child: ManageCard(
                   icon: Icons.accessible,
@@ -103,6 +103,7 @@ class _ManageViewState extends State<ManageView> {
                   },
                 ),
               ),
+              if (getStorage.read('role') == 'parent')
               SliverToBoxAdapter(
                 child: ManageCard(
                   icon: Icons.settings_sharp,
@@ -119,6 +120,7 @@ class _ManageViewState extends State<ManageView> {
                   },
                 ),
               ),
+              if (getStorage.read('role') == 'parent')
               SliverToBoxAdapter(
                 child: ManageCard(
                   icon: Icons.copyright,
@@ -135,6 +137,7 @@ class _ManageViewState extends State<ManageView> {
                   },
                 ),
               ),
+              if (getStorage.read('role') == 'parent')
               SliverToBoxAdapter(
                 child: ManageCard(
                   icon: Icons.gpp_good,
@@ -151,6 +154,7 @@ class _ManageViewState extends State<ManageView> {
                   },
                 ),
               ),
+              if (getStorage.read('role') == 'parent')
               SliverToBoxAdapter(
                 child: ManageCard(
                   icon: Icons.article_rounded,
@@ -167,6 +171,7 @@ class _ManageViewState extends State<ManageView> {
                   },
                 ),
               ),
+              
               SliverToBoxAdapter(
                 child: ManageCard(
                   icon: Icons.logout_sharp,
@@ -178,7 +183,7 @@ class _ManageViewState extends State<ManageView> {
                   },
                 ),
               ),
-            ],
+            ]
           ),
         ));
   }

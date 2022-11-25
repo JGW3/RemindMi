@@ -284,7 +284,6 @@ class _AddTaskViewState extends State<AddTaskView> {
           ),
           Container(
             margin: EdgeInsets.fromLTRB(20, 0, 20, 38),
-            width: 398,
             height: 60,
             child: Align(
               child: Obx(

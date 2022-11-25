@@ -11,7 +11,7 @@ class Dependent {
 
   static Dependent fromSnapshot(DocumentSnapshot snap) {
     Dependent dependent = Dependent(
-      // modal of id and name of depedent is created here
+      // model of id and name of depedent is created here
       id: snap.reference.id,
       name: snap['fullName'],
     );

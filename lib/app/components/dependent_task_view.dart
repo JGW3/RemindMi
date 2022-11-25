@@ -139,7 +139,7 @@ class DependentTaskViewCard extends StatelessWidget {
             child: Text(
               'Task Description',
               style: GoogleFonts.dmSans(
-                  fontSize: 18.0,
+                  fontSize: 22.0,
                   fontWeight: FontWeight.w500,
                   color: Color.fromARGB(255, 79, 89, 107)),
             ),
@@ -149,7 +149,7 @@ class DependentTaskViewCard extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(row.description,
                 style: GoogleFonts.dmSans(
-                    fontSize: 20.0,
+                    fontSize: 18.0,
                     fontWeight: FontWeight.w400,
                     color: Colors.black)),
           ),
@@ -162,7 +162,7 @@ class DependentTaskViewCard extends StatelessWidget {
             child: Text(
               'Task Time',
               style: GoogleFonts.dmSans(
-                  fontSize: 18.0,
+                  fontSize: 22.0,
                   fontWeight: FontWeight.w500,
                   color: Color.fromARGB(255, 79, 89, 107)),
             ),
@@ -172,7 +172,7 @@ class DependentTaskViewCard extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(row.time + ',' + row.date,
                 style: GoogleFonts.dmSans(
-                    fontSize: 20.0,
+                    fontSize: 18.0,
                     fontWeight: FontWeight.w400,
                     color: Colors.black)),
           ),
@@ -185,7 +185,7 @@ class DependentTaskViewCard extends StatelessWidget {
                     fillColor: Colors.green,
                     elevation: 0.0,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0)),
+                        borderRadius: BorderRadius.circular(14.0)),
                     onPressed: () {
                       try {
                         var myTaskDetail = row.dependentList
@@ -258,7 +258,7 @@ class DependentTaskViewCard extends StatelessWidget {
                                       height: 4.0,
                                     ),
                                     Text(
-                                      "You have successfully completed the task.",
+                                      "You have successfully completed the task. Keep up the good work!",
                                       textAlign: TextAlign.left,
                                       style: GoogleFonts.dmSans(
                                         fontSize: 20,
