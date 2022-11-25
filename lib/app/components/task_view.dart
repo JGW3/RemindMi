@@ -128,7 +128,7 @@ class TaskViewCard extends StatelessWidget {
                                       : ('Pending')),
                                   style: GoogleFonts.dmSans(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 18,
+                                    fontSize: 16,
                                     color: Color.fromARGB(255, 0, 56, 167),
                                   ),
                                 ),
@@ -203,7 +203,7 @@ class TaskViewCard extends StatelessWidget {
                               'Assigner',
                               style: GoogleFonts.dmSans(
                                 fontWeight: FontWeight.w500,
-                                fontSize: 18,
+                                fontSize: 16,
                                 color: Color.fromARGB(255, 0, 56, 167),
                               ),
                             ),
