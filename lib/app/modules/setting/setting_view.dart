@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:remindmi/app/widget/manage_card.dart';
 import 'package:remindmi/app/modules/manage/managepages/delete_profile.dart';
 import 'package:remindmi/app/modules/manage/managepages/edit_profile.dart';

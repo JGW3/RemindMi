@@ -6,6 +6,7 @@ import 'package:remindmi/app/components/dependent_task_view.dart';
 import 'package:remindmi/app/components/task_list_card.dart';
 import 'package:remindmi/app/helper/utils.dart';
 import 'package:remindmi/app/modules/dependent_home_task/dependent_home_task_controller.dart';
+import 'package:remindmi/app/modules/dependent_home_task/dependent_home_task_controller2.dart';
 
 //______IT IS DEPENDENT'S HOME PAGE____________//
 class DependentHomeTaskListViews extends StatelessWidget {
@@ -14,6 +15,7 @@ class DependentHomeTaskListViews extends StatelessWidget {
 
   final dependent_home_task_controller =
       Get.put(DependentHomeTaskListController());
+  final dependent_home_task_controller2 = Get.put(DependentHomeTaskListController2());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,7 +75,7 @@ class DependentHomeTaskListViews extends StatelessWidget {
                     width: 39,
                   ),
                   Text(
-                    'Running Task',
+                    'Running Tasks',
                     style: GoogleFonts.dmSans(
                       fontSize: 22,
                       fontWeight: FontWeight.w500,
@@ -115,7 +117,7 @@ class DependentHomeTaskListViews extends StatelessWidget {
           if (dependent_home_task_controller.tasks.isEmpty)
             SliverToBoxAdapter(
               child: SizedBox(
-                height: 256,
+                height: 56,
               ),
             ),
           if (dependent_home_task_controller.tasks.isEmpty)
@@ -136,9 +138,58 @@ class DependentHomeTaskListViews extends StatelessWidget {
             ),
           SliverToBoxAdapter(
             child: SizedBox(
-              height: 124,
+              height: 56,
             ),
-          )
+          ),
+          SliverPadding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            sliver: SliverToBoxAdapter(
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/images/chotu.png',
+                    height: 39,
+                    width: 39,
+                  ),
+                  Text(
+                    'Completed Tasks',
+                    style: GoogleFonts.dmSans(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500,
+                      color: Color.fromARGB(255, 69, 69, 209),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                return GestureDetector(
+                  onLongPress: () {
+                    print(index);
+                    showModalBottomSheet(
+                      backgroundColor: Colors.transparent,
+                      isScrollControlled: true,
+                      context: context,
+                      builder: (context) {
+                        return DependentTaskViewCard(
+                          indexNo: index,
+                          row: dependent_home_task_controller2.tasks[index],
+                        );
+                      },
+                    );
+                  },
+                  child: TaskListCard(
+                    index: index,
+                    row: dependent_home_task_controller2.tasks[index],
+                  ),
+                );
+              },
+              childCount: dependent_home_task_controller2.tasks.length,
+            ),
+          ),
         ],
       ),
     ));

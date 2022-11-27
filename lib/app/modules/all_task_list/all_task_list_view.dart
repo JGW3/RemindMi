@@ -43,7 +43,7 @@ class _AllTaskListViewState extends State<AllTaskListView> {
                 alignment: Alignment.centerLeft,
                 margin: EdgeInsets.fromLTRB(16, 0, 0, 0),
                 child: Text(
-                  'All Task',
+                  'All Tasks',
                   style: GoogleFonts.dmSans(
                       fontSize: 36.0, fontWeight: FontWeight.w700),
                 ),

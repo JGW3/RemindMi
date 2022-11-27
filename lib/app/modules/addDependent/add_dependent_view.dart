@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:remindmi/app/components/no_checkbox_child_list.dart';
+import 'package:remindmi/app/components/privacy_policy.dart';
 import 'package:remindmi/app/components/terms&condition.dart';
 import 'package:remindmi/app/modules/addDependent/add_depedent_controller.dart';
 import 'package:remindmi/app/modules/addtask/add_task_controller.dart';
@@ -66,7 +67,7 @@ class AddDependentView extends StatelessWidget {
               controller: _fullNameController,
               decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: "Full Name",
+                hintText: "Nickname",
                 prefixIcon: Icon(
                   Icons.person_outline_outlined,
                 ),
@@ -177,14 +178,14 @@ class AddDependentView extends StatelessWidget {
                 checkboxShape: CircleBorder(),
                 title: RichText(
                   text: TextSpan(
-                    text: 'I agree to privacy ',
+                    text: 'I agree to ',
                     style: GoogleFonts.dmSans(
                         fontSize: 18,
                         fontWeight: FontWeight.w400,
                         color: Color.fromARGB(255, 0, 0, 0)),
                     children: <TextSpan>[
                       TextSpan(
-                        text: 'policy & terms',
+                        text: 'Privacy Policy ',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             showModalBottomSheet<void>(
@@ -194,20 +195,55 @@ class AddDependentView extends StatelessWidget {
                               context: context,
                               builder: (BuildContext context) {
                                 return SingleChildScrollView(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        borderRadius: new BorderRadius.only(
-                                            topLeft:
-                                                const Radius.circular(25.0),
-                                            topRight:
-                                                const Radius.circular(25.0))),
-                                    child: Align(
-                                      child: Column(
-                                        children: <Widget>[TermsAndCondtions()],
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: new BorderRadius.only(
+                                              topLeft: const Radius.circular(25.0),
+                                              topRight:
+                                              const Radius.circular(25.0))),
+                                      child: Align(
+                                        child: Column(
+                                          children: <Widget>[PrivacyPolicy()],
+                                        ),
                                       ),
-                                    ),
-                                  ),
-                                );
+                                    ));
+                              },
+                            );
+                          },
+                        style: GoogleFonts.dmSans(
+                            fontSize: 15,
+                            color: Color.fromRGBO(24, 90, 219, 1)),
+                      ),
+                      TextSpan(
+                        text: '&',
+                        style: GoogleFonts.dmSans(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            color: Color.fromARGB(255, 0, 0, 0)),
+                      ),
+                      TextSpan(
+                        text: ' Terms and Conditions ',
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            showModalBottomSheet<void>(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              context: context,
+                              builder: (BuildContext context) {
+                                return SingleChildScrollView(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: new BorderRadius.only(
+                                              topLeft: const Radius.circular(25.0),
+                                              topRight:
+                                              const Radius.circular(25.0))),
+                                      child: Align(
+                                        child: Column(
+                                          children: <Widget>[TermsAndCondtions()],
+                                        ),
+                                      ),
+                                    ));
                               },
                             );
                           },

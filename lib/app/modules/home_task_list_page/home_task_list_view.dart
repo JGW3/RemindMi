@@ -7,7 +7,7 @@ import 'package:remindmi/app/components/task_view.dart';
 import 'package:remindmi/app/helper/utils.dart';
 import 'package:remindmi/app/modules/addtask/add_task_view.dart';
 import 'package:remindmi/app/modules/home_task_list_page/home_task_list_controller.dart';
-
+import 'package:remindmi/app/modules/home_task_list_page/home_task_list_controller2.dart';
 //_________________IT IS PARENT'S HOME TASK LIST PAGE ____________________//
 
 class HomeTaskListViews extends StatefulWidget {
@@ -17,6 +17,7 @@ class HomeTaskListViews extends StatefulWidget {
 
 class _HomeTaskListViewsState extends State<HomeTaskListViews> {
   final home_task_controller = Get.put(HomeTaskListController());
+  final home_task_controller2 = Get.put(HomeTaskListController2());
   final getStorge = GetStorage();
 
   @override
@@ -79,7 +80,7 @@ class _HomeTaskListViewsState extends State<HomeTaskListViews> {
                         width: 39,
                       ),
                       Text(
-                        'Running Task',
+                        'Running Tasks',
                         style: GoogleFonts.dmSans(
                           fontSize: 22,
                           fontWeight: FontWeight.w500,
@@ -121,7 +122,7 @@ class _HomeTaskListViewsState extends State<HomeTaskListViews> {
               if (home_task_controller.tasks.isEmpty)
                 SliverToBoxAdapter(
                   child: SizedBox(
-                    height: 256,
+                    height: 56,
                   ),
                 ),
               if (home_task_controller.tasks.isEmpty)
@@ -129,7 +130,7 @@ class _HomeTaskListViewsState extends State<HomeTaskListViews> {
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   sliver: SliverToBoxAdapter(
                     child: Text(
-                      'You have not assigned any task',
+                      'You do not have any assigned tasks',
                       textAlign: TextAlign.center,
                       maxLines: 2,
                       style: GoogleFonts.dmSans(
@@ -142,9 +143,58 @@ class _HomeTaskListViewsState extends State<HomeTaskListViews> {
                 ),
               SliverToBoxAdapter(
                 child: SizedBox(
-                  height: 124,
+                  height: 56,
                 ),
-              )
+              ),
+              SliverPadding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                sliver: SliverToBoxAdapter(
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/chotu.png',
+                        height: 39,
+                        width: 39,
+                      ),
+                      Text(
+                        'Completed Tasks',
+                        style: GoogleFonts.dmSans(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 69, 69, 209),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                    return GestureDetector(
+                      onLongPress: () {
+                        print(index);
+                        showModalBottomSheet(
+                          backgroundColor: Colors.transparent,
+                          isScrollControlled: true,
+                          context: context,
+                          builder: (context) {
+                            return TaskViewCard(
+                                indexNo: index,
+                                row: home_task_controller2.tasks[index],
+                                from: 'home');
+                          },
+                        );
+                      },
+                      child: TaskListCard(
+                        index: index,
+                        row: home_task_controller2.tasks[index],
+                      ),
+                    );
+                  },
+                  childCount: home_task_controller2.tasks.length,
+                ),
+              ),
             ],
           ),
         ),

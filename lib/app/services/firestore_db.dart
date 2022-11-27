@@ -55,6 +55,26 @@ class FireStoreDB {
     return test;
   }
 
+  Stream<List<Task>> parentGetCompleteTasks() {
+    //only the completed tasks are fetched from firebase to parent home screen page
+    //where there are task list
+    var test = _firebaseFirestore
+        .collection('tasks')
+        .where('parent', isEqualTo: getStorge.read("id"))
+        .orderBy('priority')
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs
+          .map((doc) => (Task.fromSnapshot(doc)))
+          .where((element) =>
+          element.dependentList.any((element) => element.status == true))
+          .toList();
+    });
+
+    return test;
+  }
+
+
   Stream<List<Dependent>> getAllDependentAddTask() {
     // In add task page there lies list of dependent which is fetched by this function
     // Here names of depedendent are stored in collection 'user' where they are filtered by their role
@@ -87,6 +107,28 @@ class FireStoreDB {
                   return false;
                 }
               }))
+          .toList();
+    });
+
+    return test;
+  }
+  Stream<List<Task>> dependentHomeGetCompleteTasks() {
+    // Here the task list of depedndent on their respective home screen are fetched from collection 'tasks'
+    var test = _firebaseFirestore
+        .collection('tasks')
+        .orderBy('priority')
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs
+          .map((doc) => (Task.fromSnapshot(doc)))
+          .where((element) => element.dependentList.any((element) {
+        if (element.dep == getStorge.read('id') &&
+            element.status == true) {
+          return true;
+        } else {
+          return false;
+        }
+      }))
           .toList();
     });
 

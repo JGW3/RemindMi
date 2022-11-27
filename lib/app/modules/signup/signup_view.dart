@@ -1,3 +1,4 @@
+//sign up  page
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -77,7 +78,7 @@ class _SignupViewState extends State<SignupView> {
               controller: _fullNameController,
               decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: "Full Name",
+                hintText: "Nickname",
                 prefixIcon: Icon(
                   Icons.person_outline_outlined,
                 ),
@@ -101,7 +102,7 @@ class _SignupViewState extends State<SignupView> {
               controller: _emailController,
               decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: "Email ID",
+                hintText: "Email Address",
                 prefixIcon: Icon(
                   Icons.mail_outline,
                 ),

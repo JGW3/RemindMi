@@ -6,7 +6,6 @@ import 'package:remindmi/app/modules/accessibility/accessibility_view.dart';
 import 'package:remindmi/app/modules/addDependent/add_dependent_view.dart';
 import 'package:remindmi/app/modules/all_task_list/all_task_list_view.dart';
 import 'package:remindmi/app/modules/manage/managepages/credits.dart';
-import 'package:remindmi/app/modules/manage/managepages/privacy_policy.dart';
 import 'package:remindmi/app/modules/setting/setting_view.dart';
 import 'package:remindmi/app/modules/terms_and_condition/terms_and_condition_view.dart';
 import 'package:remindmi/app/modules/privacy_policy/privacy_policy_view.dart';
