@@ -246,7 +246,7 @@ class DependentTaskViewCard extends StatelessWidget {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Text(
-                                      "Congratulation!!!",
+                                      "Congratulations!!!",
                                       style: GoogleFonts.dmSans(
                                         fontSize: 30,
                                         fontWeight: FontWeight.w700,

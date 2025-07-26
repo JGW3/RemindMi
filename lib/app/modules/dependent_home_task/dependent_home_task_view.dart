@@ -4,6 +4,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:remindmi/app/components/dependent_task_view.dart';
 import 'package:remindmi/app/components/task_list_card.dart';
+import 'package:remindmi/app/components/dependent_task_card_with_checkbox.dart';
 import 'package:remindmi/app/helper/utils.dart';
 import 'package:remindmi/app/modules/dependent_home_task/dependent_home_task_controller.dart';
 import 'package:remindmi/app/modules/dependent_home_task/dependent_home_task_controller2.dart';
@@ -105,7 +106,7 @@ class DependentHomeTaskListViews extends StatelessWidget {
                         },
                       );
                     },
-                    child: TaskListCard(
+                    child: DependentTaskCardWithCheckbox(
                       index: index,
                       row: dependent_home_task_controller.tasks[index],
                     ),

@@ -53,7 +53,7 @@ class PrivacyPolicy extends StatelessWidget {
                         'The app does use third party services that may collect information used to identify you.\n\n'
                         'Link to privacy policy of third party service providers used by the app\n\n'
                         '•	Google Play Services\n'
-                        '•	Firebase Analytics\n\n',
+                        '•	Firebase Analytics',
                         style: GoogleFonts.dmSans(fontWeight: FontWeight.w300),
                         textAlign: TextAlign.justify,
                       ),
@@ -71,7 +71,7 @@ class PrivacyPolicy extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(top: 10),
                       child: Text(
-                        'We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.\n\n',
+                        'We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.',
                         style: GoogleFonts.dmSans(fontWeight: FontWeight.w300),
                         textAlign: TextAlign.justify,
                       ),
@@ -94,7 +94,7 @@ class PrivacyPolicy extends StatelessWidget {
                         'This Service does not use these “cookies” explicitly. However, the app may use third party code and libraries '
                         'that use “cookies” to collect information and improve their services. You have the option to either accept or refuse '
                         'these cookies and know when a cookie is being sent to your device. '
-                        'If you choose to refuse our cookies, you may not be able to use some portions of this Service.\n',
+                        'If you choose to refuse our cookies, you may not be able to use some portions of this Service.',
                         style: GoogleFonts.dmSans(fontWeight: FontWeight.w300),
                         textAlign: TextAlign.justify,
                       ),

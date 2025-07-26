@@ -103,7 +103,7 @@ class AppPages {
       binding: SettingBinding(),
     ),
     GetPage(
-      name: _Paths.SETTING,
+      name: _Paths.ACCESSSIBILITY,
       page: () => AccessibilityView(),
       binding: AccessibilityBinding(),
     ),
