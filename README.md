@@ -114,7 +114,7 @@ The project maintains high code quality standards:
 
 ## License
 
-This project is private and not licensed for public use.
+This project is open source and available under the MIT License.
 
 ## Support
 
