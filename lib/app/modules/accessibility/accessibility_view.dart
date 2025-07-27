@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -72,8 +70,8 @@ class _AccessibilityViewState extends State<AccessibilityView> {
           )),
           Spacer(),
           CupertinoSwitch(
-              trackColor: Colors.grey,
-              activeColor: Colors.blue,
+              activeTrackColor: Colors.blue,
+              inactiveTrackColor: Colors.grey,
               value: val,
               onChanged: (newValue) {
                 onChangeMethod(newValue);

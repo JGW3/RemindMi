@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:remindmi/app/components/custom_network_image.dart';
 
 class HomePageUserAvatar extends StatelessWidget {
   const HomePageUserAvatar({super.key});

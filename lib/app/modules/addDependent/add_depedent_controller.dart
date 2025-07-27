@@ -88,6 +88,7 @@ class AddDependentController extends GetxController {
                 isLoading.value = false;
                 showCustomSnackBar(e.code, title: "Error");
               }
+              return <dynamic>{};
             });
           } else {
             isLoading.value = false;
@@ -112,7 +113,6 @@ class AddDependentController extends GetxController {
   }
 
   postDetailsToFirestore(String fullName, String email, String role) async {
-    FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     var user = _auth.currentUser;
     CollectionReference ref = FirebaseFirestore.instance.collection('users');
     isLoading.value = false;

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:remindmi/app/modules/edit_task/edit_task_controller.dart';
@@ -319,7 +317,7 @@ class TaskViewCard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8.0)),
                         onPressed: () {
                           try {
-                            final ref = FirebaseFirestore.instance
+                            FirebaseFirestore.instance
                                 .collection('tasks')
                                 .doc(row.id)
                                 .delete();

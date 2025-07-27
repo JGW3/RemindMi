@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,7 +9,6 @@ class DependentTaskViewCard extends StatelessWidget {
   final int indexNo;
   final row;
   final getStorge = GetStorage();
-  final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
   DependentTaskViewCard({
     Key? key,
@@ -188,7 +185,7 @@ class DependentTaskViewCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(14.0)),
                     onPressed: () {
                       try {
-                        var myTaskDetail = row.dependentList
+                        row.dependentList
                             .firstWhere((element) =>
                                 element.dep == getStorge.read('id'))
                             .depName;

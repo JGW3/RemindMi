@@ -31,7 +31,7 @@ class ForgotPasswordController extends GetxController {
       isLoading.value = false;
       showCustomSnackBarSuccess("Password reset link is sent to email !",
           title: "success");
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException {
       isLoading.value = false;
       showCustomSnackBar("Something went wrong !", title: "Error");
     }

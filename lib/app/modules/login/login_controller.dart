@@ -63,17 +63,16 @@ class LoginController extends GetxController {
   ) async {
     FirebaseAuth auth = FirebaseAuth.instance;
     print(auth);
-    User? user;
     try {
       // Core authentication process is done here
       UserCredential userCredential = await auth.signInWithEmailAndPassword(
           email: email,
           password: password.trim().replaceAll(RegExp(r' \s+'), ' '));
-      user = userCredential.user;
       isLoading.value = false;
       route(); // Route is called here . in route the page is directed to bottom navigation home aka home page ...
       //and data of user is saved in get storage
       showCustomSnackBarSuccess("login successfull", title: "success");
+      return userCredential.user;
     } on FirebaseAuthException catch (e) {
       if (e.code == "user-not-found") {
         emailError.value = "User not found !";
@@ -98,11 +97,12 @@ class LoginController extends GetxController {
       }
       isLoading.value = false;
     }
+    return null;
   }
 
   void route() {
     User? user = FirebaseAuth.instance.currentUser;
-    var kk = FirebaseFirestore.instance
+    FirebaseFirestore.instance
         .collection('users')
         .doc(user!.uid)
         .get()

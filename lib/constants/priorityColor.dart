@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 
 dynamic priorityBorder(int priority) {
   if (priority == 1) {

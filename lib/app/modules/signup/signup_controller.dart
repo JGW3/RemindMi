@@ -86,6 +86,7 @@ class SignupController extends GetxController {
                 isLoading.value = false;
                 showCustomSnackBar(e.code, title: "Error");
               }
+              return <dynamic>{};
             });
           } else {
             isLoading.value = false;

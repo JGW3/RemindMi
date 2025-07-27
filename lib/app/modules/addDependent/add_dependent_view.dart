@@ -14,9 +14,9 @@ import 'package:remindmi/app/modules/addtask/add_task_controller.dart';
 
 class AddDependentView extends StatelessWidget {
   AddDependentView({super.key});
-  AddDependentController MyAddDependentController =
+  final AddDependentController MyAddDependentController =
       Get.put(AddDependentController());
-  AddTaskController addTaskController = Get.put(AddTaskController());
+  final AddTaskController addTaskController = Get.put(AddTaskController());
   @override
   Widget build(BuildContext context) {
     TextEditingController _emailController = TextEditingController();
